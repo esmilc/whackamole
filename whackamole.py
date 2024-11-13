@@ -1,4 +1,5 @@
 import pygame
+#Test
 
 
 def main():
@@ -22,8 +23,11 @@ def main():
                 pygame.draw.line(screen, "blue", (i*64,0), (i * 64, 512))
             for i in range(8):
                 pygame.draw.line(screen, "red", (0, i * 64), (640, i * 64))
+            screen.blit(mole_image, mole_image.get_rect(topleft=(0, 0)))
             pygame.display.flip()
             clock.tick(60)
+
+
     finally:
         pygame.quit()
 
