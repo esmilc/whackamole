@@ -9,12 +9,19 @@ def main():
         mole_image = pygame.image.load("mole.png")
         screen = pygame.display.set_mode((640, 512))
         clock = pygame.time.Clock()
+
         running = True
+        mole = (0,0) #cooridinates
         while running:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     running = False
             screen.fill("light green")
+
+            for i in range(10):
+                pygame.draw.line(screen, "blue", (i*64,0), (i * 64, 512))
+            for i in range(8):
+                pygame.draw.line(screen, "red", (0, i * 64), (640, i * 64))
             pygame.display.flip()
             clock.tick(60)
     finally:
